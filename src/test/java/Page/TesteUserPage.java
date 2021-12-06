@@ -30,7 +30,7 @@ public class TesteUserPage {
     }
 
     public void ClicarBotaoCriarMovimentacao() {
-        dsl.clicarElementosUtilizandoLinkText("Criar Movimenta��o");
+        dsl.clicarElementosUtilizandoLinkText("Criar Movimentação");
     }
 
     public void ClicarBotaoAdicionar() {
@@ -63,12 +63,18 @@ public class TesteUserPage {
     }
 
     public void ClicarBotaoExcluirResumoMensal() {
-        dsl.clicarElementosUtilizandoXpath("//*[@id='tabelaExtrato']/tbody/tr[2]/td[6]/a/span");
+        dsl.clicarElementosUtilizandoXpath("//*[@id='tabelaExtrato']/tbody/tr[1]/td[6]/a/span");
     }
 
     public void setTipoMovimentacao(String... escolherMovimentacoes) {
         for (String escolherMovimentacao : escolherMovimentacoes)
             dsl.campoSelecionarDropDown("tipo", escolherMovimentacao);
+
+    }
+
+    public void setMes(String... escolherMeses) {
+        for (String escolherMes : escolherMeses)
+            dsl.campoSelecionarDropDown("mes", escolherMes);
 
     }
 
@@ -106,4 +112,7 @@ public class TesteUserPage {
     }
 
 
+    public void ClicarBotaoBuscarMes() {
+        dsl.clicarElementosUtilizandoXpath("/html/body/div[2]/form/input");
+    }
 }

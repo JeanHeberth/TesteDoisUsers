@@ -47,7 +47,7 @@ public class CriarContaNaPaginaComPage {
 
         page.ClicarBotaoContas();
         page.ClicarBotaoAdicionar();
-        page.setDigitaNomeConta("Teste Com Page");
+        page.setDigitaNomeConta("Tesste Com Page");
         page.ClicarBotaoSalvar();
         page.ClicarBotaoExcluirConta();
 

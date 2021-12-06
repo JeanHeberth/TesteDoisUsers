@@ -2,6 +2,7 @@ package Suite;
 
 import Page.CriarContaNaPaginaComPage;
 import Page.CriarMovimentacaoNaPaginaComPage;
+import Page.ExcluirResumoMensalPage;
 import Page.RealizarLoginPage;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -12,6 +13,7 @@ import org.junit.runners.Suite;
         RealizarLoginPage.class,
         CriarContaNaPaginaComPage.class,
         CriarMovimentacaoNaPaginaComPage.class,
+        ExcluirResumoMensalPage.class
 
 
 })
