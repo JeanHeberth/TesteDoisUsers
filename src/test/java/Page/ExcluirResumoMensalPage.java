@@ -52,13 +52,14 @@ public class ExcluirResumoMensalPage {
     public void excluirResumoMensal() {
 
         page.ClicarBotaoResumoMensal();
+        page.setMes("Janeiro");
+        page.ClicarBotaoBuscarMes();
         page.ClicarBotaoExcluirResumoMensal();
     }
 
     @After
     public void finallize() {
         //  driver.quit();
-        // Teste dsds
     }
 }
 

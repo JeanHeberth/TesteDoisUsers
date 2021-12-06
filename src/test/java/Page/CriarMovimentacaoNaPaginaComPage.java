@@ -45,13 +45,13 @@ public class CriarMovimentacaoNaPaginaComPage {
     public void CriarMovimentacaoNaPaginaComPage() {
         page.ClicarBotaoContas();
         page.ClicarBotaoAdicionar();
-        page.setDigitaNomeConta("Teste Com Page");
+        page.setDigitaNomeConta("Teste Codsdssm Page");
         page.ClicarBotaoSalvar();
         page.ClicarBotaoCriarMovimentacao();
         page.setTipoMovimentacao("Receita");
-        page.setData("03/12/2021");
-        page.setDataPagamento("05/12/2021");
-        page.setDescricao("Mes de Dezembro");
+        page.setData("03/01/2021");
+        page.setDataPagamento("05/01/2021");
+        page.setDescricao("Mes de Janeiro");
         page.setInteressado("Jean Heberth Souza Vieira");
         page.setValor("85000.00");
         page.setTipoConta("Teste Com Page");
@@ -63,6 +63,6 @@ public class CriarMovimentacaoNaPaginaComPage {
 
     @After
     public void finallize() {
-        //driver.quit();
+        driver.quit();
     }
 }
