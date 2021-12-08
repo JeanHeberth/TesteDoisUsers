@@ -1,5 +1,6 @@
 package Page;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class TesteUserPage {
@@ -107,7 +108,7 @@ public class TesteUserPage {
 
     }
 
-    public void setSituacao() {
+    public void setSituacao(String situacao) {
         dsl.campoSelecionar("status_pago");
     }
 

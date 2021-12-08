@@ -55,7 +55,7 @@ public class CriarMovimentacaoNaPaginaComPage {
         page.setInteressado("Jean Heberth Souza Vieira");
         page.setValor("85000.00");
         page.setTipoConta("Teste Com Page");
-        page.setSituacao();
+       // page.setSituacao();
         page.ClicarBotaoSalvarMovimentacao();
 
 
@@ -63,6 +63,6 @@ public class CriarMovimentacaoNaPaginaComPage {
 
     @After
     public void finallize() {
-        driver.quit();
+       // driver.quit();
     }
 }
