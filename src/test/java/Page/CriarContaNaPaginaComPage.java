@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 public class CriarContaNaPaginaComPage {
 
     private WebDriver driver;
@@ -30,31 +32,41 @@ public class CriarContaNaPaginaComPage {
         // Comando para maximar a tela do navegador.
         driver.manage().window().maximize();
 
+        // Configurando a espera implicita
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+
         // Inicializando a DSL
         dsl = new DSL(driver);
 
         // Inicializando page
         page = new TesteUserPage(driver);
 
-        page.setEmail("jeanheberth19@gmail.com");
+       /* page.setEmail("jeanheberth19@gmail.com");
         page.setSenha("JeanHeberth");
-        page.ClicarBotaoEntrar();
+        page.ClicarBotaoEntrar();*/
     }
 
 
     @Test
     public void CriarContaNaPaginaComPage() {
 
+        page.setEmail("jeanheberth19@gmail.com");
+        page.setSenha("JeanHeberth");
+        page.ClicarBotaoEntrar();
+        /*
+
         page.ClicarBotaoContas();
         page.ClicarBotaoAdicionar();
         page.setDigitaNomeConta("Tesste Com Page");
         page.ClicarBotaoSalvar();
         page.ClicarBotaoExcluirConta();
+*/
 
     }
 
     @After
     public void finallize() {
-        driver.quit();
+        //   driver.quit();
     }
 }

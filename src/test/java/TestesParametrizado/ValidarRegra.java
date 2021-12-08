@@ -1,25 +1,22 @@
-package Page;
+package TestesParametrizado;
 
-
-import org.junit.*;
+import Page.DSL;
+import Page.TesteUserPage;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
-
-import static org.junit.Assert.assertEquals;
-
-
-public class ExcluirResumoMensalPage {
-
+public class ValidarRegra {
 
     private WebDriver driver;
-    private WebDriverWait wait;
     private DSL dsl;
     private TesteUserPage page;
+    private String tipoConta;
+    private By tipoMovimentacoes;
+
 
     @Before
     public void inicializa() {
@@ -44,32 +41,48 @@ public class ExcluirResumoMensalPage {
         // Inicializando page
         page = new TesteUserPage(driver);
 
+        //
+       tipoMovimentacoes = By.id("tipo");
+
+
+
+
         page.setEmail("jeanheberth19@gmail.com");
         page.setSenha("JeanHeberth");
         page.ClicarBotaoEntrar();
     }
 
 
+
     @Test
-    public void excluirResumoMensal() {
+    public void CriarMovimentacaoNaPaginaComPage() {
 
-        page.ClicarBotaoResumoMensal();
-        page.setMes("Janeiro");
-        page.ClicarBotaoBuscarMes();
-        List<WebElement> excluirConta = (List<WebElement>) driver.findElements(By.xpath("//*[@id=\"tabelaExtrato\"]/tbody/tr/td/span"));
-        for (int i = 0; i < excluirConta.size(); i++) {
 
-            if (excluirConta.equals("Pendente")) {
-                page.ClicarBotaoExcluirResumoMensal();
-            } else {
-                System.err.println("Falhou");
-            }
+
+        page.ClicarBotaoContas();
+        page.ClicarBotaoAdicionar();
+        page.setDigitaNomeConta("Agora vai despesa");
+        page.ClicarBotaoSalvar();
+        page.ClicarBotaoCriarMovimentacao();
+        page.setTipoMovimentacao("Despesa");
+        page.setData("03/01/2021");
+        page.setDataPagamento("05/01/2021");
+        page.setDescricao("Despesa");
+        page.setInteressado("Jean Heberth Souza Vieira");
+        page.setValor("85000.00");
+        page.setTipoConta("Agora vai despesa");
+        if (tipoMovimentacoes.equals("Receita")){
+            page.setSituacao("status_pago");
+        }else{
+            page.setSituacao("status_pendente");
         }
+        page.ClicarBotaoSalvarMovimentacao();
+
+
     }
 
     @After
     public void finallize() {
-        //  driver.quit();
+       // driver.quit();
     }
 }
-
