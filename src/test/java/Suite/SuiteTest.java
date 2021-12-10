@@ -1,9 +1,11 @@
 package Suite;
 
+import Core.DriveFactory;
 import Page.CriarContaNaPaginaComPage;
 import Page.CriarMovimentacaoNaPaginaComPage;
 import Page.ExcluirResumoMensalPage;
 import Page.RealizarLoginPage;
+import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -19,6 +21,10 @@ import org.junit.runners.Suite;
 })
 public class SuiteTest {
 
-//teste
+    @AfterClass
+    public static void finalizaTudo(){
+        DriveFactory.killDriver();
+    }
+
 
 }
