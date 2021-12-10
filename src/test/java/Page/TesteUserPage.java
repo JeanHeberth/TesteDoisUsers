@@ -1,18 +1,9 @@
 package Page;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import Core.BasePage;
 
-public class TesteUserPage {
+public class TesteUserPage extends BasePage {
 
-    private DSL dsl;
-
-    public TesteUserPage(WebDriver driver) {
-        this.dsl = new DSL(driver);
-    }
-
-    public TesteUserPage() {
-    }
 
     public void setEmail(String email) {
         dsl.escreve("email", email);
